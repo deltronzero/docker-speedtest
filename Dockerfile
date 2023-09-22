@@ -14,6 +14,4 @@ RUN apt-get update && apt-get -y install speedtest && rm -rf /var/lib/apt/lists/
 # accept the eula. we do this now so it doesnt display a banner during run
 RUN mkdir -p ~/.config/ookla && echo '{ "Settings": { "LicenseAccepted": "604ec27f828456331ebf441826292c49276bd3c1bee1a2f65a6452f505c4061c" } }' > ~/.config/ookla/speedtest-cli.json
 
-# turn off progress since docker cant output it
-#ENTRYPOINT [ "speedtest", "--progress=no"  ]
 ENTRYPOINT [ "speedtest" ]
